@@ -33,10 +33,86 @@ const Header = () => {
 	if (!mounted) return null;
 	const currentTheme = theme === 'system' ? systemTheme : theme;
 
+	const navGroups = [
+		{
+			main_title: "Our superpower toolkit",
+			links: [
+				{ 
+					hrefLink: "#", 
+					title: "BRAND",
+				},
+				{ 
+					hrefLink: "#", 
+					title: "DIGITAL", 
+				},
+				{ 
+					hrefLink: "#", 
+					title: "MARKETING", 
+				},
+				{ 
+					hrefLink: "#", 
+					title: "SOCIAL", 
+				},
+				{ 
+					hrefLink: "#", 
+					title: "CONTENT", 
+				},
+				{ 
+					hrefLink: "#",
+					title: "BIDS & TENDERS", 
+				},
+			],
+		},
+		{
+			main_title: "Projects",
+			links: [
+				{ 
+					hrefLink: "#",
+					title: "CASE STUDIES", 
+				},
+				{ 
+					hrefLink: "#", 
+					title: "HOW WE WORK", 
+				},
+			],
+		},
+		{
+			main_title: "Thoughts and musings",
+			links: [
+				{ 
+					hrefLink: "#",
+					title: "NEWS & INSIGHTS", 
+				},
+			],
+		},
+		{
+			main_title: "Culture",
+			links: [
+				{ 
+					hrefLink: "#",
+					title: "ABOUT US", 
+				},
+				{ 
+					hrefLink: "#",
+					title: "SUSTAINABILITY", 
+				},
+			],
+		},
+		{
+			main_title: "Get in touch",
+			links: [
+				{ 
+					hrefLink: "#",
+					title: "CONTACT US", 
+				}
+			],
+		},
+	];
+
 	return (
 		<>
 			<header className={`header fixed left-0 top-0 z-10 w-full ${menuBtn ? 'slide' : ''} ${onScroll ? 'fixed_wrap' : ''}`}>
-				<div className="navbar flex flex-row items-center flex-nowrap relative justify-between px-[104px] py-8 z-[12]">
+				<div className="navbar flex flex-row items-center flex-nowrap relative justify-between px-[104px] py-8 z-[12] transition-all duration-[0.3s] ease-in-out">
 					<div className="left-wrapper flex flex-row items-center flex-nowrap relative gap-x-[72px] justify-start">
 						<Link className="logo block" href="/">
 							<svg className="block h-[55px] relative w-[100px] transition-all duration-[0.4s] ease-in-out" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 422 272.94">
@@ -61,6 +137,30 @@ const Header = () => {
 						<div className="hamburger scale_demo flex items-center flex-col flex-nowrap gap-y-[14px] py-[10px] relative" onClick={menuHandler}>
 							<div className="bar one border-2 border-solid dark:border-white border-raven rounded-[3px] block h-0 relative w-[38px] transition-all duration-[0.4s] ease-in-out"></div>
 							<div className="bar two border-2 border-solid dark:border-white border-raven rounded-[3px] block h-0 relative w-[38px] transition-all duration-[0.4s] ease-in-out"></div>
+						</div>
+					</div>
+				</div>
+				<div className="nav_menu block absolute left-0 top-[108px] w-screen bg-raven opacity-0 pointer-events-none invisible py-[100px] z-[11]">
+					<div className="container h-full">
+						<div className="nav-items flex flex-col flex-wrap items-start content-start justify-start w-full h-full gap-y-12 gap-x-[107px]">
+							{navGroups.map((group, index) => {
+								const {main_title} = group;
+								return (
+									<div key={index} className="nav-group">
+										<h5 className="font-inter text-h5 font-normal mb-2 dark:text-raven text-white">
+											{main_title}
+										</h5>
+										{group.links.map((link, linkIndex) => {
+											const {hrefLink, title} = link;
+											return (
+												<h3 key={linkIndex} className="my-2 dark:text-raven text-white font-bold text-h3 font-oswald transition-all duration-[0.3s] ease-in-out hover:text-miami">
+													<Link href={hrefLink} className="block no-underline">{title}</Link>
+												</h3>
+											)
+										})}
+									</div>
+								)
+							})}
 						</div>
 					</div>
 				</div>

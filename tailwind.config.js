@@ -10,7 +10,7 @@ module.exports = {
     extend: {
       fontFamily: {
         inter: ["Inter", "sans-serif"],
-        National: ["National 2 Condensed", "sans-serif"],
+        oswald: ["Oswald", "sans-serif"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -46,13 +46,14 @@ module.exports = {
         "snow": "#fff7f8",
       },
       fontSize: {
-        h1: ["190px", "150px"],
+        h1: ["150px", "140px"],
         h2: ["100px", "85px"],
         h3: ["60px", "56px"],
         h4: ["40px", "56px"],
         h5: ["27px", "34px"],
         h6: ["24px", "36px"],
         p: ["14px", "100%"],
+        18: ["18px", "28px"],
       },
     },
   },

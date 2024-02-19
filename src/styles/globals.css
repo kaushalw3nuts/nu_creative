@@ -30,5 +30,16 @@ a { cursor: none; }
 
 .main_header.fixed_wrap { @apply dark:bg-raven bg-white }
 .header .left-wrapper .logo svg path { @apply dark:fill-white transition-all duration-[0.4s] ease-in-out fill-candy-apple }
+.header.slide .left-wrapper .logo svg path { @apply dark:fill-raven fill-snow }
+.header.slide .left-wrapper p { @apply dark:text-raven text-snow }
 .header.slide .navbar .right-wrapper .hamburger .bar.one { transform: rotate(45deg) translate(7px,8px); }
 .header.slide .navbar .right-wrapper .hamburger .bar.two { transform: rotate(-45deg) translate(4px,-6px); }
+.header.slide .navbar .right-wrapper .hamburger .bar.one { @apply border-raven }
+.header.slide .navbar .right-wrapper .hamburger .bar.two { @apply border-raven }
+.header.slide .navbar { @apply dark:bg-lavender bg-candy-apple }
+.header.slide .nav_menu { @apply opacity-100 pointer-events-auto visible dark:bg-lavender bg-candy-apple }
+.header .nav_menu { transition: background-color 0.3s ease, opacity 0.3s ease, visibility 0.3s ease; backface-visibility: hidden; height: 100vh; }
+
+
+.banner_content p svg path { @apply stroke-raven transition-all duration-[0.4s] ease-in-out }
+.banner_content p svg circle { @apply fill-violet dark:fill-mint }
