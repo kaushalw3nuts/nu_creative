@@ -111,7 +111,7 @@ const Header = () => {
 
 	return (
 		<>
-			<header className={`header fixed left-0 top-0 z-10 w-full ${menuBtn ? 'slide' : ''} ${onScroll ? 'fixed_wrap' : ''}`}>
+			<header className={`header fixed left-0 top-0 z-10 w-full transition-all duration-[0.4s] ease-in-out ${menuBtn ? 'slide' : ''} ${onScroll ? 'fixed_wrap' : ''}`}>
 				<div className="navbar flex flex-row items-center flex-nowrap relative justify-between px-[104px] py-8 z-[12] transition-all duration-[0.3s] ease-in-out">
 					<div className="left-wrapper flex flex-row items-center flex-nowrap relative gap-x-[72px] justify-start">
 						<Link className="logo block" href="/">
@@ -153,7 +153,7 @@ const Header = () => {
 										{group.links.map((link, linkIndex) => {
 											const {hrefLink, title} = link;
 											return (
-												<h3 key={linkIndex} className="my-2 dark:text-raven text-white font-bold text-h3 font-oswald transition-all duration-[0.3s] ease-in-out hover:text-miami">
+												<h3 key={linkIndex} className="my-2 dark:text-raven text-white font-bold text-h3 font-oswald transition-all duration-[0.4s] ease-in-out hover:text-miami dark:hover:text-miami">
 													<Link href={hrefLink} className="block no-underline">{title}</Link>
 												</h3>
 											)
@@ -164,6 +164,9 @@ const Header = () => {
 						</div>
 					</div>
 				</div>
+				<Link className="work_with_us flex fixed text-center items-center justify-center bottom-[67px] right-[67px] w-36 py-[32px] px-[12px] bg-aquamarine no-underline rounded-[130px] z-[7]" href="#">
+    				<h5 className="text-raven m-0 text-[30px] leading-8 font-oswald">WORK WITH US?</h5>
+				</Link>
 			</header>
 		</>
 	)	

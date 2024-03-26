@@ -27,8 +27,10 @@ a { cursor: none; }
 
 .dot_wrapper { @apply fixed -left-2 -top-2 h-3 w-3 rounded-full pointer-events-none z-[1000] bg-aquamarine }
 
+.primary_btn { @apply block no-underline py-2 px-4 text-14 bg-aquamarine text-raven uppercase rounded-[30px] border-2 border-solid border-aquamarine transition-all duration-[0.3s] ease-in-out hover:bg-transparent dark:hover:text-white hover:text-raven }
 
-.main_header.fixed_wrap { @apply dark:bg-raven bg-white }
+
+.header.fixed_wrap { @apply dark:bg-raven bg-white }
 .header .left-wrapper .logo svg path { @apply dark:fill-white transition-all duration-[0.4s] ease-in-out fill-candy-apple }
 .header.slide .left-wrapper .logo svg path { @apply dark:fill-raven fill-snow }
 .header.slide .left-wrapper p { @apply dark:text-raven text-snow }
@@ -39,7 +41,22 @@ a { cursor: none; }
 .header.slide .navbar { @apply dark:bg-lavender bg-candy-apple }
 .header.slide .nav_menu { @apply opacity-100 pointer-events-auto visible dark:bg-lavender bg-candy-apple }
 .header .nav_menu { transition: background-color 0.3s ease, opacity 0.3s ease, visibility 0.3s ease; backface-visibility: hidden; height: 100vh; }
+.header .work_with_us { animation: workWithUsButton; animation-duration: 3s; animation-iteration-count: infinite; }
+@keyframes workWithUsButton {
+	0%, 40% {
+		transform: scale(1) rotate(0deg);
+	}
+	50% {
+		transform: scale(1.04) rotate(20deg);
+	}
+	60%, 100% {
+		transform: scale(1) rotate(0deg);
+	}
+}
 
 
 .banner_content p svg path { @apply stroke-raven transition-all duration-[0.4s] ease-in-out }
 .banner_content p svg circle { @apply fill-violet dark:fill-mint }
+
+
+.intro .intro_content p + p { @apply mt-6 }
